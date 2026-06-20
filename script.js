@@ -1,45 +1,174 @@
+/* =======================
 
-// Smooth scroll to Gallery
+SMOOTH SCROLL
 
-function scrollToGallery() {
+======================= */
 
-    document
-    .getElementById("gallery")
-    .scrollIntoView({
+function scrollToSection(id) {
 
-        behavior: "smooth"
+    document.getElementById(id)
 
-    });
+        .scrollIntoView({
+
+            behavior: "smooth"
+
+        });
 
 }
 
 
 
-// Birthday Surprise Button
+
+
+/* =======================
+
+SECRET LETTER
+
+======================= */
+
+const openLetter =
+
+    document.getElementById("openLetter");
+
+const letter =
+
+    document.getElementById("letter");
+
+
+
+openLetter.addEventListener(
+
+    "click",
+
+    () => {
+
+        if (
+
+            letter.style.display === "block"
+
+        ) {
+
+            letter.style.display = "none";
+
+            openLetter.innerHTML =
+
+                "Open Letter 💌";
+
+        }
+
+        else {
+
+            letter.style.display = "block";
+
+            openLetter.innerHTML =
+
+                "Close Letter ❤️";
+
+        }
+
+    }
+
+);
+
+
+
+
+
+
+/* =======================
+
+MUSIC MOON
+
+======================= */
+
+const moon =
+
+    document.getElementById("musicMoon");
+
+const song =
+
+    document.getElementById("song");
+
+
+
+let isPlaying = false;
+
+
+
+moon.addEventListener(
+
+    "click",
+
+    () => {
+
+
+        if (!isPlaying) {
+
+            song.play();
+
+            moon.classList.add("active");
+
+            isPlaying = true;
+
+        }
+
+        else {
+
+            song.pause();
+
+            moon.classList.remove("active");
+
+            isPlaying = false;
+
+        }
+
+    }
+
+);
+
+
+
+
+
+
+/* =======================
+
+FINAL POPUP
+
+======================= */
 
 const surpriseBtn = document.getElementById("surpriseBtn");
 
-if (surpriseBtn) {
+const popup = document.getElementById("popup");
+
+const closePopup = document.getElementById("closePopup");
+
+
+if (surpriseBtn && popup && closePopup) {
 
     surpriseBtn.addEventListener("click", () => {
 
+        popup.style.display = "flex";
+
         createConfetti();
 
-        setTimeout(() => {
+    });
 
-            alert(
-`🎂 Happy Birthday தோழி🌙 ❤️
 
-Thank you for being such a beautiful part of this world.
+    closePopup.addEventListener("click", () => {
 
-May your smile always shine like the moon 🌙
+        popup.style.display = "none";
 
-Wishing you Happiness,
-Success,
-and Endless Smiles 💙☀️`
-            );
+    });
 
-        },500);
+
+    window.addEventListener("click", (e) => {
+
+        if (e.target === popup) {
+
+            popup.style.display = "none";
+
+        }
 
     });
 
@@ -47,35 +176,199 @@ and Endless Smiles 💙☀️`
 
 
 
-// Simple Confetti Effect
-
-function createConfetti(){
-
-    for(let i=0;i<80;i++){
-
-        const confetti=document.createElement("div");
-
-        confetti.classList.add("confetti");
-
-        confetti.style.left=Math.random()*100+"vw";
-
-        confetti.style.animationDuration=
-
-        Math.random()*3+2+"s";
-
-        confetti.style.background=
-
-        randomColor();
-
-        document.body.appendChild(confetti);
 
 
+/* =======================
 
-        setTimeout(()=>{
+CLICK OUTSIDE CLOSE
+
+======================= */
+
+window.addEventListener(
+
+    "click",
+
+    (e) => {
+
+        if (
+
+            e.target === popup
+
+        ) {
+
+            popup.style.display =
+
+                "none";
+
+        }
+
+    }
+
+);
+
+
+
+
+
+
+
+
+/* =======================
+
+CONFETTI EFFECT
+
+======================= */
+
+function createConfetti() {
+
+
+    for (let i = 0; i < 100; i++) {
+
+
+        const confetti =
+
+            document.createElement("div");
+
+
+        confetti.classList.add(
+
+            "confetti"
+
+        );
+
+
+        document.body.appendChild(
+
+            confetti
+
+        );
+
+
+
+        confetti.style.left =
+
+            Math.random() * 100 + "vw";
+
+
+        confetti.style.top =
+
+            "-20px";
+
+
+        confetti.style.width =
+
+            Math.random() * 10 + 5 + "px";
+
+
+        confetti.style.height =
+
+            Math.random() * 15 + 5 + "px";
+
+
+
+        const colors = [
+
+            "#fde68a",
+
+            "#60a5fa",
+
+            "#ffffff",
+
+            "#93c5fd",
+
+            "#f9a8d4"
+
+        ];
+
+
+        confetti.style.background =
+
+            colors[
+
+            Math.floor(
+
+                Math.random()
+
+                * colors.length)
+
+            ];
+
+
+
+        confetti.style.position =
+
+            "fixed";
+
+
+        confetti.style.borderRadius =
+
+            "5px";
+
+
+        confetti.style.zIndex =
+
+            "9999";
+
+
+        confetti.style.opacity =
+
+            "0.8";
+
+
+
+        confetti.animate(
+
+            [
+
+                {
+
+                    transform:
+
+                        `translateY(0)
+
+rotate(0deg)`
+
+                },
+
+
+                {
+
+                    transform:
+
+                        `translateY(
+
+${window.innerHeight + 100}px)
+
+rotate(
+
+${Math.random() * 720}deg)`
+
+                }
+
+            ],
+
+            {
+
+                duration:
+
+                    Math.random() * 3000
+
+                    + 3000,
+
+                iterations: 1
+
+            }
+
+        );
+
+
+
+        setTimeout(() => {
 
             confetti.remove();
 
-        },5000);
+        }, 6000);
+
 
     }
 
@@ -83,175 +376,160 @@ function createConfetti(){
 
 
 
-// Random Colors
 
-function randomColor(){
 
-    const colors=[
 
-    "#FFD54F",
 
-    "#87CEFA",
+/* =======================
 
-    "#FFF4A3",
+MOON PARALLAX EFFECT
 
-    "#ffffff",
+======================= */
 
-    "#B0E0FF"
+const bgMoon =
 
-    ];
+    document.getElementById(
 
+        "moon"
 
+    );
 
-    return colors[
 
-    Math.floor(
 
-    Math.random()*colors.length
+document.addEventListener(
 
-    )
+    "mousemove",
 
-    ];
+    (e) => {
 
-}
 
+        const x =
 
+            (e.clientX
 
-// Add Confetti Style Dynamically
+                / window.innerWidth
 
-const style=document.createElement("style");
+                - 0.5) * 20;
 
 
+        const y =
 
-style.innerHTML=`
+            (e.clientY
 
-.confetti{
+                / window.innerHeight
 
-position:fixed;
+                - 0.5) * 20;
 
-top:-20px;
 
-width:12px;
 
-height:12px;
+        bgMoon.style.transform =
 
-border-radius:50%;
+            `translate(
 
-z-index:9999;
+calc(-50% + ${x}px),
 
-animation:fall linear forwards;
+calc(-50% + ${y}px)
 
-}
+)`;
 
 
-
-@keyframes fall{
-
-0%{
-
-transform:
-
-translateY(0)
-
-rotate(0deg);
-
-opacity:1;
-
-}
-
-
-
-100%{
-
-transform:
-
-translateY(110vh)
-
-rotate(720deg);
-
-opacity:0;
-
-}
-
-}
-
-`;
-
-
-
-document.head.appendChild(style);
-
-
-
-// Fade In Animation On Scroll
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform=
-
-"translateY(0px)";
-
-}
-
-});
-
-});
-
-
-
-const sections=document.querySelectorAll(
-
-".story,.gallery,.reasons,.message,.music,.final"
+    }
 
 );
 
 
 
-sections.forEach(section=>{
 
-section.style.opacity="0";
 
-section.style.transform=
 
-"translateY(60px)";
 
-section.style.transition=
+/* =======================
 
-"all 1s ease";
+FADE IN ON SCROLL
 
-observer.observe(section);
+======================= */
+
+const sections =
+
+    document.querySelectorAll(
+
+        "section"
+
+    );
+
+
+
+const observer =
+
+    new IntersectionObserver(
+
+        (entries) => {
+
+
+            entries.forEach(entry => {
+
+
+                if (
+
+                    entry.isIntersecting
+
+                ) {
+
+                    entry.target.style.opacity =
+
+                        "1";
+
+
+                    entry.target.style.transform =
+
+                        "translateY(0)";
+
+                }
+
+
+            });
+
+        },
+
+        {
+
+            threshold: 0.2
+
+        }
+
+    );
+
+
+
+
+sections.forEach(section => {
+
+
+    section.style.opacity = "0";
+
+    section.style.transform =
+
+        "translateY(60px)";
+
+
+    section.style.transition =
+
+        "1s ease";
+
+
+    observer.observe(
+
+        section
+
+    );
+
 
 });
 
 
 
-// Floating Moon Animation
+console.log(
 
-const moon=document.querySelector(".moon");
+    "🌙 The Moon Chose You"
 
-
-
-if(moon){
-
-document.addEventListener("mousemove",(e)=>{
-
-const x=(window.innerWidth/2-e.pageX)/50;
-
-const y=(window.innerHeight/2-e.pageY)/50;
-
-
-
-moon.style.transform=
-
-`translate(${x}px,${y}px)`;
-
-});
-
-}
-
+);
