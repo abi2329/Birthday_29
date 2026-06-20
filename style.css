@@ -185,11 +185,6 @@ BACKGROUND
 
 }
 
-
-
-
-
-
 /* =======================
 
 MOON
@@ -350,10 +345,6 @@ INTRO SECTION
 
 }
 
-
-
-
-
 .quote {
 
     font-size: 26px;
@@ -367,10 +358,6 @@ INTRO SECTION
     margin-bottom: 30px;
 
 }
-
-
-
-
 
 .intro h1 {
 
@@ -388,9 +375,6 @@ INTRO SECTION
 
 }
 
-
-
-
 .intro p {
 
     font-size: 22px;
@@ -400,9 +384,6 @@ INTRO SECTION
     color: #cbd5e1;
 
 }
-
-
-
 
 .intro button {
 
@@ -440,9 +421,6 @@ INTRO SECTION
 
 }
 
-
-
-
 .intro button:hover {
 
     transform:
@@ -458,11 +436,6 @@ INTRO SECTION
         0 0 35px rgba(96, 165, 250, .4);
 
 }
-
-
-
-
-
 
 /* =======================
 
@@ -491,11 +464,6 @@ SCROLLBAR
     border-radius: 20px;
 
 }
-
-
-
-
-
 
 /* =======================
 
@@ -621,7 +589,6 @@ HERO
 
 }
 
-
 .hero-content {
 
     max-width: 800px;
@@ -644,14 +611,11 @@ HERO
 
 }
 
-
-
 .hero h1 {
 
     font-size: clamp(36px, 8vw, 75px);
 
 }
-
 
 .hero span {
 
@@ -674,10 +638,6 @@ HERO
 
 }
 
-
-
-
-
 /* =======================
 
 FRIENDSHIP
@@ -691,7 +651,6 @@ FRIENDSHIP
     margin: auto;
 
 }
-
 
 .friendship p {
 
@@ -716,10 +675,6 @@ FRIENDSHIP
     line-height: 2;
 
 }
-
-
-
-
 
 /* =======================
 
@@ -799,10 +754,6 @@ MEMORIES
 
 }
 
-
-
-
-
 /* =======================
 
 BOOMER
@@ -866,10 +817,6 @@ BOOMER
 
 }
 
-
-
-
-
 /* =======================
 
 SANDHIYA
@@ -900,7 +847,6 @@ SANDHIYA
 
 }
 
-
 .family-img {
 
     width: 250px;
@@ -919,7 +865,6 @@ SANDHIYA
 
 }
 
-
 .sandhiya p {
 
     font-size: 26px;
@@ -927,10 +872,6 @@ SANDHIYA
     line-height: 2;
 
 }
-
-
-
-
 
 /* =======================
 
@@ -1738,8 +1679,6 @@ BACKGROUND PHOTO COLLAGE
 
 }
 
-
-
 .photo-collage {
 
     position: absolute;
@@ -1767,8 +1706,6 @@ BACKGROUND PHOTO COLLAGE
         scrollPhotos 60s linear infinite;
 
 }
-
-
 
 .photo-collage img {
 
@@ -1831,9 +1768,6 @@ BACKGROUND PHOTO COLLAGE
         rgba(0, 0, 0, .20);
 
 }
-
-
-
 
 /* MOON */
 
