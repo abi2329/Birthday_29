@@ -1769,6 +1769,20 @@ BACKGROUND PHOTO COLLAGE
 
 }
 
+.music-moon {
+
+    width: min(55vw, 220px);
+
+    cursor: pointer;
+
+    transition: .5s;
+
+    display: block;
+
+    margin: 30px auto;
+
+}
+
 /* MOON */
 
 .moon {

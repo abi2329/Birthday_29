@@ -70,62 +70,40 @@ openLetter.addEventListener(
 
 );
 
-
-
-
-
-
 /* =======================
-
 MUSIC MOON
-
 ======================= */
 
-const moon =
+const musicMoon = document.getElementById("musicMoon");
+const song = document.getElementById("song");
 
-    document.getElementById("musicMoon");
+if (musicMoon && song) {
 
-const song =
+    let isPlaying = false;
 
-    document.getElementById("song");
-
-
-
-let isPlaying = false;
-
-
-
-moon.addEventListener(
-
-    "click",
-
-    () => {
-
+    musicMoon.addEventListener("click", () => {
 
         if (!isPlaying) {
 
             song.play();
 
-            moon.classList.add("active");
+            musicMoon.classList.add("active");
 
             isPlaying = true;
 
-        }
-
-        else {
+        } else {
 
             song.pause();
 
-            moon.classList.remove("active");
+            musicMoon.classList.remove("active");
 
             isPlaying = false;
 
         }
 
-    }
+    });
 
-);
-
+}
 
 
 
@@ -205,13 +183,6 @@ window.addEventListener(
     }
 
 );
-
-
-
-
-
-
-
 
 /* =======================
 
